@@ -54,17 +54,20 @@
 
       <!-- Declare assets for use in the scene. -->
       <a-assets timeout="1000">
-        <!-- Declare assets here. These are things like images or 3D models. --> 
+        <!-- Declare assets here. These are things like images or 3D models. -->    
+         
+        <video id="Video" autoplay loop="true" src="https://cdn.glitch.com/10611d05-87e2-4063-9496-95b424468c1c%2FIndium%20Lab.mp4?v=1598394377859"></video>
+         
+         <img id="guns" src="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/asset.png?v=1641609369427">
       
       </a-assets>
 
       <!-- Create a anchor to attach your augmented reality -->
-	    
-        <a-marker preset="custom" type="pattern" url="https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/budz.patt?v=1641649461576">
-   <a-image position='0 0.5 0' url="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/stoner%20girl.png?v=1641649677380"></a-image>
+        <a-marker preset="custom" type="pattern" url="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/pattern-BUDZMARKER.patt?v=1641643407921">
+   <a-video position='0 0.5 0' src="#Video" width="16" height="9" position="0 0 -20"></a-video>
  </a-marker>
      <a-marker preset="custom" type="pattern" url="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/pattern-socalsavagesmarker.patt?v=1641635600460">
-   <a-image position='0 0.5 0' url="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/rig.png?v=1641649669286"></a-image>
+   <a-image position='0 0.5 0' src="#guns"></a-image>
  </a-marker>
       <!-- Define a static camera -->
       <a-camera-static/>
