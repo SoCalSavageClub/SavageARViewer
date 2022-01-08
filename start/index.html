@@ -46,3 +46,39 @@
     <!-- add some info at the top of the page -->
     <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; color: gold;'>
       Pay Attention Foo !<br/>
+      Use your phone to find cool shit!
+    </div>    
+
+    <!-- Define your 3d scene and enabled ar.js -->
+    <a-scene debug embedded arjs='trackingMethod: best; debugUIEnabled: false;'>
+
+      <!-- Declare assets for use in the scene. -->
+      <a-assets timeout="1000">
+        <!-- Declare assets here. These are things like images or 3D models. -->    
+         
+        <video id="Video" autoplay loop="true" src="240.mp4>
+         
+         <img id="guns" src="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/asset.png?v=1641609369427">
+      
+      </a-assets>
+
+      <!-- Create a anchor to attach your augmented reality -->
+        <a-marker preset="custom" type="pattern" src="sbz.patt">
+   <a-video position='0 0.5 0' src="#video" width="8" height="4.5" position="0 0 -20"></a-video>
+ </a-marker>
+     <a-marker preset="custom" type="pattern" src="https://savagedrip.patt">
+   <a-image position='0 0.5 0' src="#guns"></a-image>
+ </a-marker>
+      <!-- Define a static camera -->
+      <a-camera-static/>
+
+    </a-scene>
+
+    <!-- add some info at the bottom left of the page -->
+    <div >
+      <span id="myText" style='z-index: 1; color: gold; position: fixed; left: 50px; bottom: 10px;'>www.OfficialSoCalSavages.com</span>
+    </div>   
+
+  </body>
+
+</html>
