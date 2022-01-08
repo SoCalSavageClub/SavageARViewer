@@ -56,18 +56,19 @@
       <a-assets timeout="1000">
         <!-- Declare assets here. These are things like images or 3D models. -->    
          
-        <video id="Video" autoplay loop="true" src="https://cdn.glitch.com/10611d05-87e2-4063-9496-95b424468c1c%2FIndium%20Lab.mp4?v=1598394377859"></video>
+        <video id="Video" autoplay loop="true" src="Assets/Media/240.mp4"></video>
          
          <img id="guns" src="Assests/Media/guns.png">
       
       </a-assets>
 
       <!-- Create a anchor to attach your augmented reality -->
+	    
         <a-marker preset="custom" type="pattern" url="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/pattern-BUDZMARKER.patt?v=1641643407921">
-   <a-video position='0 0.5 0' src="#Video" width="16" height="9" position="0 0 -20"></a-video>
+   <a-video position='0 0.5 0' src="Video" width="16" height="9" position="0 0 -20"></a-video>
  </a-marker>
      <a-marker preset="custom" type="pattern" url="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/pattern-socalsavagesmarker.patt?v=1641635600460">
-   <a-image position='0 0.5 0' src="#guns"></a-image>
+   <a-image position='0 0.5 0' src="guns"></a-image>
  </a-marker>
       <!-- Define a static camera -->
       <a-camera-static/>
