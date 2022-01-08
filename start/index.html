@@ -3,23 +3,17 @@
 	<head>
 
     <!--
-    AR.js workshop
-    Author: Matt Nutsch
-    Date: 6-20-2018
-    Description: This is sample code for a workshop on developing an AR.js app.
-    Notes:
-    This code is based in part on Jerome Etienne's examples of AR.js at: https://github.com/jeromeetienne/AR.js/tree/master/aframe
-    It is also based in part on the AFrame documentation, available at: https://aframe.io/docs
-
-    Go to this URL to run this code in a mobile web browser: https://mnutsch.github.io/arjs_workshop/start/index.html
-    Download and print this image for the AR target marker: https://github.com/mnutsch/mnutsch.github.io/raw/master/arjs_workshop/start/Hiro%20pattern%20with%20border.pdf
+    AR.js Viewer
+    Date: 1-7-202
+    SoCalSavageClub AR Viewer for everything SoCal Savages. Coded by B.G Savage.
+    Stay High Homies, Buy some NFT's, LFG
     -->
 
     <!-- include a-frame -->
-    <script src="https://mnutsch.github.io/arjs_workshop/start/vendor/aframe/build/aframe.min.js"></script>
+    <script src="https://socalsavageclub.github.io/savagearviewer/start/vendor/aframe/build/aframe.min.js"></script>
 
     <!-- include ar.js for aframe -->
-    <script src='https://mnutsch.github.io/arjs_workshop/start/vendor/arjs/build/aframe-ar.js'></script>
+    <script src='https://socalsavageclub.github.io/savagearviewer/start/vendor/arjs/build/aframe-ar.js'></script>
     <script>ARjs.Context.baseURL = 'https://mnutsch.github.io/arjs_workshop/start/vendor/three.js/'</script>
     <!-- Note: the above libraries are included with absolute URL's, because Github.io seems to prefer those. Change them to relative URL's -->
 
@@ -51,9 +45,9 @@
   <!-- start the body of your page -->
   <body style='margin : 0px; overflow: hidden;'>
     <!-- add some info at the top of the page -->
-    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; color: white;'>
-      Instructions:<br/>
-      Point your camera at the target marker.
+    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; color: gold;'>
+      Pay Attention Foo !<br/>
+      Use your phone to find cool shit in the SoCalSavageClub X SoCal Savages
     </div>    
 
     <!-- Define your 3d scene and enabled ar.js -->
@@ -117,7 +111,7 @@
 
     <!-- add some info at the bottom left of the page -->
     <div >
-      <span id="myText" style='z-index: 1; color: white; position: fixed; left: 50px; bottom: 10px;'>Add some text here.</span>
+      <span id="myText" style='z-index: 1; color: gold; position: fixed; left: 50px; bottom: 10px;'>SoCalSavageClubMetaWorldViewer.</span>
     </div>   
 
   </body>
