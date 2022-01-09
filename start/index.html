@@ -14,20 +14,19 @@
     <!-- include ar.js for aframe -->
     <script src='https://socalsavageclub.github.io/savagearviewer/start/vendor/arjs/build/aframe-ar.js'></script>
     <script>ARjs.Context.baseURL = 'https://mnutsch.github.io/arjs_workshop/start/vendor/three.js/'</script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <!-- Note: the above libraries are included with absolute URL's, because Github.io seems to prefer those. Change them to relative URL's -->
 
     <script>		
       //wait until the page loads to perform the following
       window.onload = function () 
       {
-
         var intervalLength = 20; //determines the speed of the animation (milliseconds to wait between ticks)
 
         //define the scene, for ease of interacting with it
         var scene = document.querySelector('a-scene');       
 
         //ADD JAVASCRIPT CODE HERE...
-
         //Timer for animations
         setInterval(function()
         {
@@ -48,40 +47,49 @@
       Pay Attention Foo !<br/>
       Use your phone to find cool shit!
     </div>    
+    
+   
 
     <!-- Define your 3d scene and enabled ar.js -->
+    
     <a-scene debug embedded arjs='trackingMethod: best; debugUIEnabled: false;'>
-
       <!-- Declare assets for use in the scene. -->
-      <a-assets timeout="1000">
         <!-- Declare assets here. These are things like images or 3D models. -->    
-         
-        <!video id="video1" autoplay loop="true" src="https://"></video>
-         
-         <!img id="png1" src="https://">
+         <a-assets>
+            <img id="img1" src="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/savageflag.png">
+         </a-assets> 
       
-      </a-assets>
-
+  <!------------SCENE 1--------------------------------------------------SCENE 1 ---------------------------SCENE 1------------------------------------>
+                    <!-- This that envirment shit -->
+            <!--                         ...              -->
+         <!a-sound src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay="true"
+    position="-3 1 -4"></a-sound>
+         <!a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
+            <!--                         ...              -->
       <!-- Create a anchor to attach your augmented reality -->
 
-        <a-marker preset="custom" type="pattern" url="marker1">
-          <a-video position='0 0.5 0' src="video1" width="16" height="9" position="0 0 -20"></a-video>
-       </a-marker>
+       	<!-- handle hiro marker -->
+		<a-marker preset='hiro'>
+			 <a-image src="#img1"></a-image>
+		</a-marker>
 
-        <a-marker preset="custom" type="pattern" url="marker2">
-          <a-image position='0 0.5 0' src="png1"></a-image>
-       </a-marker>
+		<!-- handle matrix marker -->
+		<a-marker-camera preset='custom' type='pattern' url='https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/savagedrip.patt'></a-marker-camera>
+			<a-image src="#img1"></a-image>
+		</a-marker>
 
-      <!-- Define a static camera -->
-      <a-camera-static/>
+	<!-- handle matrix marker -->
+		<a-marker-camera preset='custom' type='pattern' url='https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/budz.patt'></a-marker-camera>
+			<a-image src="#img1"></a-image>
+		</a-marker>
 
-    </a-scene>
+		<!-- handle kanji marker -->
+		<a-marker preset='kanji'>
+			 <a-image src="#img1"></a-image>
+		</a-marker>
 
-    <!-- add some info at the bottom left of the page -->
-    <div >
-      <span id="myText" style='z-index: 1; color: gold; position: fixed; left: 50px; bottom: 10px;'>SavageClub</span>
-    </div>   
-
-  </body>
-
+		<!-- add a simple camera -->
+		<a-entity camera></a-entity>
+	</a-scene>
+</body>
 </html>
