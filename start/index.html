@@ -90,18 +90,35 @@
 
 	<!-- handle Budz marker -->
 		<a-marker type='pattern' url='https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/budz.patt'></a-marker-camera>
-			<a-image src="#png1"></a-image>
+			<a-image  scale="5 5 5"
+                position='0 0.5 0'
+                rotation="-90 0 0"
+                src="#png1"></a-image>
 		</a-marker>
-    <a-entity camera></a-entity>
 
 		<!-- handle kanji marker -->
 		<a-marker preset='kanji'>
-			 <a-image src="#png1"></a-image>
+			 <a-image  scale="5 5 5"
+                position='0 0.5 0'
+                rotation="-90 0 0"
+                src="#png1"></a-image>
 		</a-marker>
+
+    <!-- handle BARCODE TYPE marker -->
+    <!a-marker type='barcode' value='5'>
+      <a-image  scale="5 5 5"
+                position='0 0.5 0'
+                rotation="-90 0 0"
+                src="#png1"></a-image>
+    </a-marker>
 
 		<!-- add a simple camera -->
 		<a-entity camera></a-entity>
 
 	</a-scene>
+    <!-- add some info at the bottom left of the page -->
+    <div >
+      <span id="myText" style='z-index: 1; color: gold; position: fixed; left: 50px; bottom: 10px;'>SavageClub</span>
+    </div>   
 </body>
 </html>
