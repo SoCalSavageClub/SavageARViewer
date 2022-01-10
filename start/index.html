@@ -56,9 +56,11 @@
       <!-- Declare assets for use in the scene. -->
         <!-- Declare assets here. These are things like images or 3D models. -->    
          <a-assets>
-            <img
-	       id="png1"
-		src="/start/Assets/Media/png1.png"></img>
+           
+            <img 
+	              id="png1"
+	            	src="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/asset.png?v=1641609369427">
+      
          </a-assets> 
       
   <!------------SCENE 1--------------------------------------------------SCENE 1 ---------------------------SCENE 1------------------------------------>
@@ -72,21 +74,22 @@
 
        	<!-- handle hiro marker -->
 		<a-marker preset='hiro'>
-			 <a-image src="#png1"></a-image>
+			 <a-image  scale="2 2 2"
+                src="#png1"></a-image>
 		</a-marker>
 
 		<!-- handle matrix marker -->
-		<a-marker-camera preset='custom' type='pattern' url='https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/savagedrip.patt'></a-marker-camera>
-			<a-image src="#png1"></a-image>
+		<!a-marker-camera preset='custom' type='pattern' url='https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/savagedrip.patt'></a-marker-camera>
+			<a-image  src="#png1"></a-image>
 		</a-marker>
 
 	<!-- handle matrix marker -->
-		<a-marker-camera preset='custom' type='pattern' url='https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/budz.patt'></a-marker-camera>
+		<!a-marker-camera preset='custom' type='pattern' url='https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/budz.patt'></a-marker-camera>
 			<a-image src="#png1"></a-image>
 		</a-marker>
 
 		<!-- handle kanji marker -->
-		<a-marker preset='kanji'>
+		<!a-marker preset='kanji'>
 			 <a-image src="#png1"></a-image>
 		</a-marker>
 
