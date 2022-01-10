@@ -59,7 +59,7 @@
            
             <img 
 	              id="png1"
-	            	src="https://socalsavageclub.github.io/savagearviewer/start/png1.png">
+	            	src="https://socalsavageclub.github.io/savagearviewer/start/Assets/Media/png1.png">
       
          </a-assets> 
       
@@ -80,23 +80,28 @@
                 src="#png1"></a-image>
 		</a-marker>
 
-		<!-- handle matrix marker -->
-		<!a-marker-camera preset='custom' type='pattern' url='https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/savagedrip.patt'></a-marker-camera>
-			<a-image  src="#png1"></a-image>
+		<!-- handle SavageDrip marker -->
+	 <a-marker type='pattern' url='https://socalsavageclub.github.io/savagearviewer/start/Assets/markers/mrkrsd.patt'></a-marker-camera>
+			<a-image  scale="5 5 5"
+                position='0 0.5 0'
+                rotation="-90 0 0"
+                src="#png1"></a-image>
 		</a-marker>
 
-	<!-- handle matrix marker -->
-		<!a-marker-camera preset='custom' type='pattern' url='https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/budz.patt'></a-marker-camera>
+	<!-- handle Budz marker -->
+		<a-marker type='pattern' url='https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/budz.patt'></a-marker-camera>
 			<a-image src="#png1"></a-image>
 		</a-marker>
+    <a-entity camera></a-entity>
 
 		<!-- handle kanji marker -->
-		<!a-marker preset='kanji'>
+		<a-marker preset='kanji'>
 			 <a-image src="#png1"></a-image>
 		</a-marker>
 
 		<!-- add a simple camera -->
 		<a-entity camera></a-entity>
+
 	</a-scene>
 </body>
 </html>
