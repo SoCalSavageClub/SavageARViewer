@@ -1,55 +1,116 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
+	<head>
+    <!--
+    SoCal Savage AR Viewer
+    Date: 1-7-2022
+    Augmented reality Viewer for everything SoCal Savages.
+    
+    -->
+
+    <!-- include a-frame -->
+    <script src="https://socalsavageclub.github.io/savagearviewer/start/vendor/aframe/build/aframe.min.js"></script>
+
+    <!-- include ar.js for aframe -->
+    <script src='https://socalsavageclub.github.io/savagearviewer/start/vendor/arjs/build/aframe-ar.js'></script>
+    <script>ARjs.Context.baseURL = 'https://mnutsch.github.io/arjs_workshop/start/vendor/three.js/'</script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <!-- Note: the above libraries are included with absolute URL's, because Github.io seems to prefer those. Change them to relative URL's -->
+
+    <script>		
+      //wait until the page loads to perform the following
+      window.onload = function () 
+      {
+        var intervalLength = 20; //determines the speed of the animation (milliseconds to wait between ticks)
+
+        //define the scene, for ease of interacting with it
+        var scene = document.querySelector('a-scene');       
+
+        //ADD JAVASCRIPT CODE HERE...
+        //Timer for animations
+        setInterval(function()
+        {
+
+          //ADD CODE HERE TO DO THINGS...
+          
+        }, intervalLength);
+
+      }
+    </script>
+
   </head>
 
-  <body>
-    <a-scene mindar-image="imageTargetSrc: https://cdn.glitch.global/508caa64-afd1-4a42-a36b-b645bca17820/targets%20(1).mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-      <a-assets>
-        <a-asset-item id="dripmodel" src="https://cdn.glitch.global/508caa64-afd1-4a42-a36b-b645bca17820/Savagedrip3d.glb?v=1641798270180"></a-asset-item>
-         <a-img id="savageape" src="https://cdn.glitch.global/508caa64-afd1-4a42-a36b-b645bca17820/Savage%20Ape.png?v=1641797633539"></a-img>
-         <a-img id="guns" src="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/asset.png"></a-img>
-         <a-img id="flags" src="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/savageflag.png?v=1641649670988"></a-img>
-         <a-img id="round" src="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/staysavage.png?v=1641649676011"></a-img>
-         <a-img id="anime" src="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/stoner%20girl.png?v=1641649677380"></a-img>
-         <a-video id="240" src="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/240.MP4?v=1641649686919"></a-video>
-         <a-img id="rig" src="https://cdn.glitch.global/f3505e45-24db-40f8-aed4-31fb9a5a0778/rig.png?v=1641649669286"></a-img>
-      </a-assets>
+  <!-- start the body of your page -->
+  <body style='margin : 0px; overflow: hidden;'>
+    <!-- add some info at the top of the page -->
+    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; color: gold;'>
+      Pay Attention Foo! !<br/>
+      Use your phone to find cool shit!
+    </div>    
+    
+   
 
-      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+    <!---Define your 3d scene # ------SCENE 1 ------ and enabled ar.js -------------->
+                              <!---trackingMethod: best--->
+                              <!---detectionMode: mono_and_matrix; matrixCodeType: 3x3--->
+     <a-scene debug embedded arjs='trackingMethod: best; debugUIEnabled: false;'>
+                            
+      <!-- Declare assets for use in the scene. -->
+        <!-- Declare assets here. These are things like images or 3D models. -->    
+         <a-assets>
+           
+            <img 
+	              id="png1"
+	            	src="https://socalsavageclub.github.io/savagearviewer/start/media/png1.png">
+      
+         </a-assets> 
+ 
+                    <!-- This that envirment shit -->
+            <!--                         ...              -->
+      <!-- Create a anchor to attach your augmented reality -->
 
-      <a-entity mindar-image-target="targetIndex: 0">
-        <a-image rotation="0 0 0 " position="0 0 0" scale=" 1 1 1" src="#rig"></image>
-      </a-entity>
-      
-      <a-entity mindar-image-target="targetIndex: 1">
-        <a-image rotation="0 0 0 " position="0 0 0" scale=" 1 1 1" src="#savageape"></image>
-      </a-entity>
-      
-      <a-entity mindar-image-target="targetIndex: 2">
-        <a-image rotation="0 0 0 " position="0 0 0" scale=" 1 1 1" src="#guns"></image>
-      </a-entity>
-      
-      <a-entity mindar-image-target="targetIndex: 3">
-        <a-image rotation="0 0 0 " position="0 0 0" scale=" 1 1 1" src="#flags"></image>
-      </a-entity>
-      
-      <a-entity mindar-image-target="targetIndex: 4">
-        <a-image rotation="0 0 0 " position="0 0 0" scale=" 1 1 1" src="#anime"></image>
-      </a-entity>
-      
-      <a-entity mindar-image-target="targetIndex: 5">
-        <a-video rotation="0 0 0 width="16" height="9" position="0 0 -20" src="#240"></a-video>
-      </a-entity>
-      
-      <a-entity mindar-image-target="targetIndex: 6">
-        <a-image rotation="0 0 0 " position="0 0 0" scale=" 1 1 1" src="#round"></image>
-      </a-entity>
-      
-    </a-scene>
-  </body>
+       	<!-- handle hiro marker -->
+
+		<!-- handle White Socal Savages -->
+	 <a-marker type='pattern' url='https://socalsavageclub.github.io/savagearviewer/start/markers/patt/whitess.patt'></a-marker-camera>
+			<a-image  scale="2 2 2"
+                position='0 0.5 0'
+                rotation="-90 0 0"
+                src="#png1"></a-image>
+		</a-marker>
+
+	<!-- handle Budz marker -->
+		<a-marker type='pattern' url='https://cdn.glitch.global/91f499bf-fe64-4d55-89f2-a2adec1566ad/budz.patt'></a-marker-camera>
+			<a-image  scale="5 5 5"
+                position='0 0.5 0'
+                rotation="-90 0 0"
+                src="#png1"></a-image>
+		</a-marker>
+
+		<!-- handle kanji marker -->
+		<a-marker preset='kanji'>
+			 <a-image  scale="5 5 5"
+                position='0 0.5 0'
+                rotation="-90 0 0"
+                src="#png1"></a-image>
+		</a-marker>
+
+    <!-- handle BARCODE TYPE marker -->
+    <a-marker type='barcode' value='5'>
+      <a-image  scale="5 5 5"
+                position='0 0.5 0'
+                rotation="-90 0 0"
+                src="#png1"></a-image>
+    </a-marker>
+
+		<!-- add a simple camera -->
+		<a-entity camera></a-entity>
+
+	</a-scene>
+
+    <!-- add some info at the bottom left of the page -->
+    <div >
+      <span id="myText" style='z-index: 1; color: gold; position: fixed; left: 50px; bottom: 10px;'>SavageClub</span>
+    </div>   
+</body>
 </html>
